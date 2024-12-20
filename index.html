@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Create a header that contains main idea of the page. -->
+    <header>
+        <h1>Expression Calculator</h1>
+        <nav> <!-- Specific button to activate dark mode.  -->
+            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        </nav>
+    </header>
+
+    <main> <!-- Main body of the calculator.  -->
+        <div class="calculator">
+            <!-- Display -->
+            <div class="display">
+                <input id="expression-input" type="text" placeholder="Enter Prefix/Postfix Expression" />
+                <div id="result-display">Result: <span id="result-value"> </span></div>
+            </div>                      
+
+            <!-- Buttons -->
+            <div class="button-grid">
+
+                <!-- Digit Buttons -->
+                <button class="digit">1</button>
+                <button class="digit">2</button>
+                <button class="digit">3</button>
+                <button class="digit">4</button>
+                <button class="digit">5</button>
+                <button class="digit">6</button>
+                <button class="digit">7</button>
+                <button class="digit">8</button>
+                <button class="digit">9</button>
+                <button class="digit">0</button>
+                <button class="digit">.</button>
+                <button class="digit"> </button>
+
+                <!-- Operators -->
+                
+                <button class="operator">+</button>
+                <button class="operator">-</button>
+                <button class="operator">*</button>
+                <button class="operator">/</button>
+
+                <!-- Actions -->
+
+                <button id="evaluate">Evaluate</button>
+                <button id="clear">Clear</button>
+                <button id="delete">Delete</button>
+                <!-- print button identified in javascript. -->
+                 
+            </div>
+        </div>
+
+        <!-- Educational section with processing steps.  -->
+        <section class="educational-section">
+            <h2>Prefix and Postfix Notations Guide</h2>
+            <hr>
+            <p>Prefix notation <b>(Polish notation)</b> places operators before operands, e.g.,
+            <code>+ 9 * 2 3</code> evaluates to <code>+ 9 6</code> then to <code>15</code>.</p>
+            <p>Postfix notation <b>(Reverse Polish notation)</b> places operators after operands,
+            e.g., <code>9 2 3 * +</code> evaluates to <code>9 6 +</code>then to <code>15</code>.</p>
+        </section>
+    </main>
+
+    <!-- link html file to its corresponding js file. -->
+    <script src="script.js"></script>
+
+    <!-- Base info of the website and the foot of it.  -->
+    <footer>
+        <h3 style="display:flex">All Rights Reserved &copy</h3>
+        <h3 style="display:flex">joeraad2002@gmail.com</h3>
+    </footer>
+
+</body>
+</html>
