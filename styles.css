@@ -1,0 +1,282 @@
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    background-color: lightseagreen;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+/* Add cascading styles to buttons in header section. */
+header button {
+    background-color: white;
+    color: lightseagreen;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add hover styles over buttons in header section. */
+header button:hover {
+    background-color: #d1c4e9;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Design the form and colors of the calculator. */
+.calculator {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.display {
+    margin-bottom: 1rem;
+}
+
+/* Specification for the size of the input expression. */
+#expression-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+#result-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+/* Display every 4 buttons in every row. */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+/* Size and shape of the buttons. */
+button {
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Assigning background colors for digits and operators. */
+button.digit {
+    background-color: #e0e0e0;
+}
+
+button.operator {
+    background-color: lightseagreen;
+    color: white;
+}
+
+button#evaluate {
+    grid-column: span 2;
+    background-color: green;
+    color: white;
+}
+
+button#clear {
+    grid-column: span 2;
+    background-color: red;
+    color: white;
+}
+
+button#delete {
+    grid-column: span 2;
+    background-color: yellow;
+    color: white;
+}
+
+button#print {
+    grid-column: span 2;
+    background-color: brown;/*rgba(159, 101, 28, 1); */
+    color: white;
+}
+
+/* Assigning hover colors on each button. */
+button:hover {
+    background-color: #bdbdbd;
+    transform: translateY(-2px);
+}
+
+button.operator:hover {
+    background-color: #98def0;
+}
+
+button#evaluate:hover {
+    background-color: #66bb6a;
+}
+
+button#clear:hover {
+    background-color: #e57373;
+}
+
+button#delete:hover {
+    background-color: #ffb74d;
+}
+
+button#print:hover {
+    background-color: #dda862;
+}
+
+/* Educational Section */
+.educational-section {
+    margin-top: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.educational-section h2 {
+    color: lightseagreen;
+}
+
+.educational-section p {
+    line-height: 1.5;
+}
+
+/* Designing characteristics of the footer section. */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: lightseagreen;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* Applying Dark Mode */
+body.dark {
+    background-color: #212121;
+    color: #f5f5f5;
+}
+
+body.dark header {
+    background-color: #333;
+}
+
+body.dark .calculator, body.dark .educational-section {
+    background-color: #424242;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+body.dark button {
+    background-color: #616161;
+    color: white;
+}
+
+body.dark button:hover {
+    background-color: #757575;
+}
+
+body.dark button.operator:hover {
+    background-color: #98def0;
+}
+
+body.dark button#evaluate:hover {
+    background-color: #81c784;
+}
+
+body.dark button#clear:hover {
+    background-color: #ef9a9a;
+}
+
+body.dark button#delete:hover {
+    background-color: #ffd54f;
+}
+
+body.dark button#shared:hover {
+    background-color: #eebd90;
+}
+
+
+body.dark footer {
+    background-color: #333;
+}
+
+
+/* Responsive Design to make the website accessible on mobile devices. */
+@media (max-width: 768px) {
+    .button-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    #expression-input {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    #result-display {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+
+    header {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .calculator {
+        padding: 1rem;
+    }
+
+    .educational-section {
+        padding: 1rem;
+    }
+}
