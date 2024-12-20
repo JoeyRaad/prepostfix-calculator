@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Expression</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body> 
+    <!-- Create a header that contains main idea of the page. -->
+    <header id="dark-mode-toggle">
+        <h1>Print Expression and Result</h1>
+        <p id="printExpression">Expression: </p>
+        <p id="printResult">Result: </p>
+        <div class="actions">
+            <button id="copyButton">Copy</button>
+            <button id="shareButton">Share</button>
+        </div>
+    </header>
+   
+    <main>
+        <!-- Section to clarify the function of each button. -->
+        <section class="educational-section">
+            <h2>Copy and Share Your Results</h2>
+            <hr>
+            <p>Click on <b>"Copy"</b> button to get a copy of your expression answer.</p>
+            <p>Click on <b>"Share"</b> button to share a clone of your expression answer.</p>
+            <p><strong>For further details and queries, you can contact us through our email 
+                written down below at the bottom page.</strong></p>
+        </section>
+
+    </main>
+
+    <!-- Base of the website and contact info. -->
+    <footer>
+     <h3 style="display:flex">All Rights Reserved &copy</h3>
+     <h3 style="display:flex">joeraad2002@gmail.com</h3>
+    </footer>
+
+    <script>
+        // Get shared expression data from localStorage
+        const expression = localStorage.getItem("printExpression");
+        const result = localStorage.getItem("printResult");
+
+        // Display expression data on the screen 
+        document.getElementById("printExpression").textContent = `Expression: ${expression}`;
+        document.getElementById("printResult").textContent = `Result: ${result}`;
+
+        // Add Copy function to print page
+        document.getElementById("copyButton").addEventListener("click", () => {
+            const content = `Expression: ${expression} \n Result: ${result}`;
+            navigator.clipboard.writeText(content)
+                .then(() => {
+                    alert("Content copied to clipboard!");
+                })
+                .catch(() => {
+                    alert("Failed to copy content.");
+                });
+        });
+
+        // Add Share function to print page
+        document.getElementById("shareButton").addEventListener("click", () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: "Expression and Result",
+                    text: `Expression: ${expression} \n Result: ${result}`,
+                })
+                .then(() => {
+                    alert("Content shared successfully!");
+                })
+                .catch(() => {
+                    alert("Sharing failed.");
+                });
+            } else {
+                alert("Sharing is not supported on this device.");
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
